@@ -100,15 +100,15 @@ yay -Rns $(yay -Qtdq) --noconfirm
 yay -Scc --noconfirm
 
 # Waydroid Stuff:
-yay -Sy --needed --noconfirm binder_linux-dkms python-pyclip wl-clipboard
-sudo modprobe binder-linux devices=binder,hwbinder,vndbinder
-sudo echo "binder_linux" > /etc/modules-load.d/binder_linux.conf
-sudo echo "options binder_linux devices=binder,hwbinder,vndbinder" > /etc/modprobe.d/binder_linux.conf
+# yay -Sy --needed --noconfirm binder_linux-dkms python-pyclip wl-clipboard
+# sudo modprobe binder-linux devices=binder,hwbinder,vndbinder
+# sudo echo "binder_linux" > /etc/modules-load.d/binder_linux.conf
+# sudo echo "options binder_linux devices=binder,hwbinder,vndbinder" > /etc/modprobe.d/binder_linux.conf
 # might need kernel param: ibt=off if seg-fault happens
 
-yay -S --needed --noconfirm waydroid 
-sudo waydroid init -s GAPPS
-sudo systemctl enable --now waydroid-container.service
+# yay -S --needed --noconfirm waydroid 
+# sudo waydroid init -s GAPPS
+# sudo systemctl enable --now waydroid-container.service
 # waydroid status
 # sudo waydroid shell and get the ID
 #
@@ -116,15 +116,14 @@ sudo systemctl enable --now waydroid-container.service
 # sudo pacman -S --needed --noconfirm pipewire-pulse
 # systemctl --user restart dbus.service
 # systemctl --user enable --now pipewire wireplumber pipewire-pulse
-sudo ufw allow 67
-sudo ufw allow 53
+# sudo ufw allow 67
+# sudo ufw allow 53
 
 # for integration with desktop windows:
-waydroid session start
-waydroid prop set persist.waydroid.multi_windows true
-waydroid session stop
-waydroid session start
+# waydroid session start
+# waydroid prop set persist.waydroid.multi_windows true
+# waydroid session stop
+# waydroid session start
 
 # sudo waydroid-extras and choose to install libndk from the menu to get ARM app support
-
 
