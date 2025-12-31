@@ -4,7 +4,7 @@ if lscpu | grep -iq "intel"; then
   IS_INTEL=true
 fi
 
-if lscpu | grep -q "VT"; then
+if cat /proc/cpuinfo | grep -iq "vmx" || grep -iq "svm"; then
   VIRT_ACCEL=true
 fi
 
