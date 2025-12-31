@@ -8,6 +8,10 @@ if cat /proc/cpuinfo | grep -iq "vmx" || grep -iq "svm"; then
   VIRT_ACCEL=true
 fi
 
+if lsusb | grep -iq "finger"; then
+  FP_PRESENT=true
+fi
+
 sudo pacman -Syu --noconfirm
 
 # yay (AUR helper) install:
@@ -21,6 +25,7 @@ sudo pacman -Rns --noconfirm gnome-software gnome-calendar gnome-text-editor gno
 yay -S --needed --noconfirm curl vim less jq man ufw rsync powertop nvtop zip lm_sensors vlc vlc-plugins-all p7zip cpupower extens
 ion-manager update-grub brave-bin steam neovim ghostty fastfetch bat #proton-vpn-gtk-app windscribe-v2-bin
 
+# Intel-specific packages:
 if $IS_INTEL; then
   yay -S --noconfirm intel-gpu-tools intel-undervolt
 fi
@@ -33,6 +38,13 @@ if $VIRT_ACCEL; then
   sudo systemctl enable --now libvirtd
   sudo systemctl enable virtlogd.socket
   sudo systemctl restart libvirtd.service
+fi
+
+# Fingerprint packages:
+if $FP_PRESENT; then
+  sudo pacman -Sy --noconfirm fprintd
+  fprintd-enroll
+  sudo bash -c 'sed "1a auth            sufficient      pam_fprintd.so" /etc/pam.d/sudo > /etc/pam.d/sudo-temp && mv /etc/pam.d/sudo-temp /etc/pam.d/sudo'
 fi
 
 # /etc/default/grub
