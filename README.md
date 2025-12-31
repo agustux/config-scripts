@@ -3,12 +3,15 @@ Auto installations for packages for willy's chromebook
 
 **Usage**
 
+Ubuntu:
 ```
 bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/willy-script.sh)"
 ```
-For reference if the speaker audio doesn't work try [this](https://github.com/WeirdTreeThing/chromebook-linux-audio) repo
 
-To disable some startup processes: `sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop`
+Arch Linux (prefered):
+```
+bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/chrultrabook-setup-arch.sh)"
+```
 
 Real-time CPU frequency reading: `watch -n1 "grep 'MHz' /proc/cpuinfo"`
 
@@ -17,3 +20,8 @@ Current CPU temperatures: `paste <(cat /sys/class/thermal/thermal_zone*/type) <(
 Current iGPU freq (Intel ONLY): `sudo intel_gpu_top`
 
 To see max iGPU freq (Intel ONLY): `sudo intel_gpu_frequency --max`
+
+**Ubuntu Only**
+
+To disable some startup processes: `sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop`
+
