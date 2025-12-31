@@ -75,12 +75,12 @@ monitor.bluez.properties = {
 }
 EOF
 
-# Sound Fixes
-git clone https://github.com/WeirdTreeThing/chromebook-linux-audio
-cd chromebook-linux-audio
-./setup-audio
-cd ..
-rm -rf chromebook-linux-audio/
+# Sound Fixes (BROKEN ON UBUNTU)
+# git clone https://github.com/WeirdTreeThing/chromebook-linux-audio
+# cd chromebook-linux-audio
+# ./setup-audio
+# cd ..
+# rm -rf chromebook-linux-audio/
 
 # USB/port fixes
 echo -e "cros-ec-typec\nintel-pmc-mux" | sudo tee -a /etc/initramfs-tools/modules > /dev/null
