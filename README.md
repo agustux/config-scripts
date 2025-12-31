@@ -10,7 +10,7 @@ bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main
 
 Ubuntu:
 ```
-bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/willy-script.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/chrultrabook-setup-ubuntu24-04.sh)"
 ```
 
 Real-time CPU frequency reading: `watch -n1 "grep 'MHz' /proc/cpuinfo"`
