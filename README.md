@@ -1,16 +1,16 @@
-# willy-script
-Auto installations for packages for willy's chromebook
+# config-scripts
+Auto installations for packages for chromebooks and misc
 
 **Usage**
 
 Arch Linux (prefered):
 ```
-bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/chrultrabook-setup-arch.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/config-scripts/main/chrultrabook-setup-arch.sh)"
 ```
 
 Ubuntu:
 ```
-bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/willy-script/main/chrultrabook-setup-ubuntu24-04.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/agustux/config-scripts/main/chrultrabook-setup-ubuntu24-04.sh)"
 ```
 
 Real-time CPU frequency reading: `watch -n1 "grep 'MHz' /proc/cpuinfo"`
