@@ -79,7 +79,7 @@ keybind = unconsumed:ctrl+h=goto_split:left
 keybind = unconsumed:ctrl+l=goto_split:right
 ' >> $HOME/.config/ghostty/config
 
-# Configuring powertop on startup: 
+# Configuring powertop on startup:
 sudo tee /etc/systemd/system/powertop-settings.service > /dev/null <<EOF
 [Unit]
 Description=Enablind "good" powertop settings
